@@ -196,7 +196,7 @@ class UtilisateursController extends Controller
                         $sum += $detail->quantite * $produit->prix;
                         $detail_list->push([
                             'product' => $produit->nom_produit,
-                            'quantité' => $detail->quantite
+                            'quantite' => $detail->quantite
                         ]);
                     }
                 }
