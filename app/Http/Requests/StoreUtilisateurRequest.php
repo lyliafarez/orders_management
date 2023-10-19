@@ -25,7 +25,7 @@ class StoreUtilisateurRequest extends FormRequest
             'nom'=> 'required|string|max:25',
             'prenom'=> 'required|string|max:255',
             'age'=>'required|integer',
-            'email'=>'required|unique|email|max:255'
+            'email'=>'required|unique:utilisateurs,email|email|max:255'
         ];
     }
 
