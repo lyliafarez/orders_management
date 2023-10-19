@@ -111,23 +111,26 @@ class DatabaseSeeder extends Seeder
 
         // seed orders
 
-        $orders['utilisateur_id'] = [1,2,6,6,7,5,4,5,5,6,5,9,5];
+        /* $orders['utilisateur_id'] = [1,2,6,6,7,5,4,5,5,6,5,9,5];
         $orders['date_commande'] = ['2023-10-18','2023-10-10','2023-10-19','2023-10-04','2023-10-06','2023-10-18','2023-10-17','2023-10-10','2023-10-11','2023-10-12','2023-10-11','2023-10-12','2023-10-13'];
-
-        for($i=0; $i<count($orders['utilisateur_id']);$i++)
+ */     
+        foreach(utilisateurs::all() as $user)
         {
             
-                commandes::create(['date_commande' => $orders['date_commande'][$i], 'utilisateur_id' =>$orders['utilisateur_id'][$i] ]);
+                commandes::create(['date_commande' => '2023-10-18', 'utilisateur_id' =>$user->id ]);
             
         }
 
         $orders_details['commande_id'] = [1,2,3,4,1,6,7,8,9,10,5,9,2];
         $orders_details['produit_id'] = [1,2,3,4,5,6,7,8,9,10,9,11,2];
         $orders_details['quantite'] = [1,2,3,1,2,2,4,3,5,6,5,4,5];
-        for($i=0; $i<count($orders_details['commande_id']);$i++)
+        foreach(commandes::all() as $order)
         {
+            foreach(produits::all() as $product){
+                detailscommande::create(['commande_id' => $order->id, 'produit_id' => $product->id ,'quantite' => random_int(1, 7)]);
+            }
            
-                detailscommande::create(['commande_id' => $orders_details['commande_id'][$i], 'produit_id' =>$orders_details['produit_id'][$i] ,'quantite' =>$orders_details['quantite'][$i]]);
+                
             
         }
 

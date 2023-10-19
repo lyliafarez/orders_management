@@ -201,7 +201,7 @@ class UtilisateursController extends Controller
                     }
                 }
                 $order_list->push([
-                    "total_price" => $sum,
+                    "total_price" => round($sum, 2),
                     "products_list" => $detail_list
 
                 ]);
