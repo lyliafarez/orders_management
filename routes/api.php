@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //CRUD utilisateur
 Route::get('utilisateur',[UtilisateursController::class,'index']);
+Route::get('utilisateur/details/{id}',[UtilisateursController::class, 'show']);
 Route::post('utilisateur/create',[UtilisateursController::class, 'store']);
 Route::put('utilisateur/edit/{id}',[UtilisateursController::class, 'update']);
 Route::delete('utilisateur/delete/{id}',[UtilisateursController::class, 'destroy']);
@@ -33,6 +34,7 @@ Route::get('utilisateur/commandes/total/{id?}',[UtilisateursController::class, '
 Route::get('utilisateur/commandes/{id?}',[UtilisateursController::class, 'getUserWithOrder']);
 //L'age moyen des utilisateur + nbr total d'utilisateur
 Route::get('utilisateur/ageMoy',[UtilisateursController::class, 'getAvgAge']);
+
 
 
 //CRUD produit

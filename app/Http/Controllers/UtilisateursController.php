@@ -40,16 +40,19 @@ class UtilisateursController extends Controller
             'age' => $request->age,
             'email' => $request->email,
         ]);
-        return response()->json(['utilisateur créé ', $utilisateur]);
+        return response()->json([ 'user' => $utilisateur]);
         //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(utilisateurs $utilisateurs)
+    public function show($id)
     {
-        //
+        $user = utilisateurs::find($id);
+        return response()->json([
+            'user'=>$user
+        ]);
     }
 
     /**
