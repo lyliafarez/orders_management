@@ -12,7 +12,7 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(['products'=>produits::all()]);
     }
 
     /**
@@ -28,7 +28,13 @@ class ProduitsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = produits::create([
+            'nom_produit'=>$request->nom_produit,
+            'prix'=>$request->prix,
+            'stock'=>$request->stock,
+        ]);
+
+        return response()->json(["product"=>$product]);
     }
 
     /**
@@ -42,24 +48,36 @@ class ProduitsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(produits $produits)
+    public function edit($id)
     {
-        //
+        
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, produits $produits)
+    public function update(Request $request, $id)
     {
-        //
+        $product= produits::find($id);
+        $product->nom_produit = $request->nom_produit;
+        $product->prix = $request->prix;
+        $product->stock = $request->stock;
+        $product->save();
+
+        return response()->json(["product"=>$product]);
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(produits $produits)
+    public function destroy($id)
     {
-        //
+        $product= produits::find($id);
+        $product->delete();
+
+        return response()->json(["product"=>$product]);
+
     }
 }

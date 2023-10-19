@@ -15,4 +15,8 @@ class produits extends Model
         'stock'
     ];
 
+    public function detailscommande(){
+        return $this->hasMany(detailscommande::class,'produit_id');
+    }
+
 }
