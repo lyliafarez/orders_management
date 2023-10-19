@@ -35,27 +35,27 @@ Création d'un Nouvel Utilisateur
 
 Avant de commencer, assurez-vous d'avoir correctement configuré votre environnement de développement
 
-Pour cela il vous faudra telechargé composer : https://getcomposer.org/download/
+1- Pour cela il vous faudra telechargé composer : https://getcomposer.org/download/
 
-le cli relatif a laravel
+2- le cli relatif a laravel
 
-une fois que le projet est récuperer en local :
+3- une fois que le projet est récuperer en local :
 
-il faut créer une base de données sur phpMyadmin (par exemple)
+4- il faut créer une base de données sur phpMyadmin (par exemple)
 
-il faut créer un fichier .env à partir de .env.example (inclu dans le projet )
+5- il faut créer un fichier .env à partir de .env.example (inclu dans le projet )
 
-il faut mettre le nom de la base de données avec l'utilisateur et le mot de passe si nécessaire
+6- il faut mettre le nom de la base de données avec l'utilisateur et le mot de passe si nécessaire
 
-il faut se mettre sur le dossier du projet
+7- il faut se mettre sur le dossier du projet
 
-il faudra taper dans votre terminal 'composer install' .
+8- il faudra taper dans votre terminal 'composer install' .
 
-afin migrer les tables vers la base de données il faut taper la commande "php artisan migrate"
+9- afin migrer les tables vers la base de données il faut taper la commande "php artisan migrate"
 
-pour remplir les tables de la base il faut taper la commande "php artisan db:seed"
+10- pour remplir les tables de la base il faut taper la commande "php artisan db:seed"
 
-démarrer l'application avec  'php artisan serve'
+11- démarrer l'application avec  'php artisan serve'
 
 ## Routes
 
@@ -120,11 +120,9 @@ Après avoir rempli le formulaire, cliquez sur "Créer" pour ajouter l'utilisate
 
 ## Visualisation d'un utilisateur 
 
-afin de visualiser l'utilisateur il faut juste cliquer sur la ligne de l'utilisateur
-
 ça permet d'afficher les infos lié à un utilisateur et les commandes effectuées par ce dernier avec les produits et leurs quantité
 
 ## Procedure et trigger
 on affiche aussi le nombre total des commandes effectuées par l'utilisateur en utilisant une procedure 'get_nbr_order_per_user' 
 
-on a utiliser aussi un trigger qui permet de supprimer les commandes d'un utilisateur une fois que ce derniers est supprimé
+on a utilisé aussi un trigger qui permet de supprimer les commandes d'un utilisateur une fois que ce derniers est supprimé

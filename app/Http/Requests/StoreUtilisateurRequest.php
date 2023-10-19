@@ -22,10 +22,10 @@ class StoreUtilisateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nom'=> 'required|string|max:25',
-            'prenom'=> 'required|string|max:255',
+            'nom'=> 'required|string|max:40',
+            'prenom'=> 'required|string|max:40',
             'age'=>'required|integer',
-            'email'=>'required|unique:utilisateurs,email|email|max:255'
+            'email'=>'required|email|max:255'
         ];
     }
 
