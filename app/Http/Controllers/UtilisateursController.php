@@ -201,8 +201,8 @@ class UtilisateursController extends Controller
                     }
                 }
                 $order_list->push([
-                    "total price" => $sum,
-                    "products list" => $detail_list
+                    "total_price" => $sum,
+                    "products_list" => $detail_list
 
                 ]);
             }
@@ -233,8 +233,8 @@ class UtilisateursController extends Controller
                         }
                     }
                     $order_list->push([
-                        "total price" => $sum,
-                        "products list" => $detail_list
+                        "total_price" => $sum,
+                        "products_list" => $detail_list
 
                     ]);
                 }

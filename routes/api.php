@@ -42,3 +42,7 @@ Route::get('produit',[ProduitsController::class, 'index']);
 Route::post('produit/create',[ProduitsController::class, 'store']);
 Route::put('produit/edit/{id}',[ProduitsController::class, 'update']);
 Route::delete('produit/delete/{id}',[ProduitsController::class, 'destroy']);
+Route::get('call/procedure/nbr_order/{id}', function ($id) {   
+        $get_nbr_order = DB::select(       
+            'CALL get_nbr_order_per_user('.$id.')'    );    
+            return response()->json(['total_order'=>$get_nbr_order[0]]);    });
